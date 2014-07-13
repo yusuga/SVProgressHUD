@@ -119,6 +119,14 @@ static const CGFloat SVProgressHUDParallaxDepthPoints = 10;
     SVProgressHUDErrorImage = image;
 }
 
++ (void)setImageViewSize:(CGSize)size
+{
+    UIImageView *imageView = [self sharedView].imageView;
+    CGRect frame = imageView.frame;
+    frame.size = size;
+    imageView.frame = frame;
+}
+
 #pragma mark - Show Methods
 
 + (void)show {
